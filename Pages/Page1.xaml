@@ -1,0 +1,587 @@
+﻿<Page
+    x:Class="DFS.DesktopV2.Pages.Page1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+    xmlns:local="clr-namespace:DFS.DesktopV2.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Packing"
+    d:DesignHeight="720"
+    d:DesignWidth="1280"
+    Loaded="Page_Loaded"
+    mc:Ignorable="d">
+
+    <Grid Background="#ffffff">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="500" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45" />
+            <RowDefinition Height="250" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <!--  Title  -->
+        <StackPanel Orientation="Horizontal">
+            <fa:IconBlock
+                Margin="20,0"
+                FontSize="20"
+                Foreground="#8A16C1"
+                Icon="Cube" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="18"
+                FontWeight="Bold"
+                Foreground="#0211A2"
+                Text="Packing" />
+        </StackPanel>
+
+
+        <!--  Search Bar  -->
+        <StackPanel
+            Grid.Column="1"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Width="50"
+                Height="30"
+                Margin="8,0"
+                Style="{StaticResource ButtonLightOutlineStyle}">
+                <Button.Content>
+                    <fa:IconBlock Icon="Print" />
+                </Button.Content>
+            </Button>
+
+            <DatePicker
+                Width="160"
+                Height="30"
+                Margin="8,0"
+                CalendarStyle="{StaticResource styleCalendar}"
+                Style="{StaticResource DatePickerStyle}" />
+            <ComboBox
+                Name="cmb"
+                Width="160"
+                Height="30"
+                VerticalAlignment="Top"
+                DisplayMemberPath="Name"
+                ItemsSource="{Binding MyItems}"
+                SelectedValuePath="Name"
+                Style="{StaticResource ComboBoxStyle}" />
+
+            <Button
+                Height="30"
+                Margin="10,0"
+                Style="{StaticResource ButtonPrimaryStyle}">
+                <Button.Content>
+                    <fa:IconBlock Foreground="White" Icon="Search" />
+                </Button.Content>
+            </Button>
+        </StackPanel>
+
+        <!--  product select  -->
+        <Border
+            Grid.Row="1"
+            Margin="0,4,4,4"
+            Padding="6,0"
+            Background="#f1f1f1"
+            BorderBrush="#dddddd"
+            BorderThickness="1"
+            CornerRadius="5">
+            <DataGrid
+                x:Name="dgvProduct"
+                AutoGenerateColumns="False"
+                CellStyle="{DynamicResource DataGridCellStyle}"
+                ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                RowStyle="{DynamicResource DataGridRowStyle1}"
+                Style="{DynamicResource DataGridStyle1}">
+
+                <!--<DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="Inactive">
+                                <Setter Property="Background" Value="Gray" />
+                                <Setter Property="IsEnabled" Value="False" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.Resources>-->
+
+                <DataGrid.Columns>
+                    <!--<DataGridTextColumn
+                        Width="100"
+                        Binding="{Binding Id}"
+                        CanUserResize="False"
+                        Header="Product"
+                        IsReadOnly="True" />-->
+                    <DataGridTemplateColumn
+                        Width="60"
+                        CanUserResize="False"
+                        Header="Image"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border
+                                    Width="40"
+                                    Height="40"
+                                    Margin="0,0,6,0"
+                                    BorderBrush="#eeeeee"
+                                    BorderThickness="1"
+                                    CornerRadius="8">
+
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="https://i.pinimg.com/originals/9d/51/e8/9d51e846656c6133ee42b6f36874ab2e.jpg" Stretch="Fill" />
+                                    </Border.Background>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn
+                        Width="100"
+                        Binding="{Binding Id}"
+                        CanUserResize="False"
+                        FontWeight="Bold"
+                        Foreground="Red"
+                        Header="Code"
+                        IsReadOnly="True" />
+
+                    <DataGridTemplateColumn
+                        Width="*"
+                        Header="Name"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <!--<StackPanel Orientation="Horizontal">
+                                    <Border
+                                        Width="30"
+                                        Height="30"
+                                        Margin="0,0,6,0"
+                                        Background="Red"
+                                        BorderBrush="Red"
+                                        BorderThickness="1"
+                                        CornerRadius="50">
+                                        <TextBlock
+                                            Margin="0,0,0,1"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"
+                                            Text="{Binding Charector}" />
+                                    </Border>
+
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                                </StackPanel>-->
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <!--<DataGridTextColumn
+                        Width="100"
+                        Binding="{Binding Birthday}"
+                        CanUserResize="False"
+                        Header="Unit"
+                        IsReadOnly="True" />-->
+                    <DataGridTemplateColumn
+                        Width="100"
+                        Header="Unit"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock VerticalAlignment="Center" Text="กก" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn
+                        Width="100"
+                        Header="Operatios"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Click="Button_Click"
+                                    Content="Confirm"
+                                    Style="{StaticResource GridViewButtonStyle}"
+                                    Tag="{Binding Status}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </Border>
+
+        <Border
+            Name="packingCompleted"
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="0,4,4,8"
+            Padding="6,0"
+            Background="#f1f1f1"
+            BorderBrush="#dddddd"
+            BorderThickness="1"
+            CornerRadius="5">
+            <DataGrid
+                Name="dgComplete"
+                AutoGenerateColumns="False"
+                CellStyle="{DynamicResource DataGridCellStyle}"
+                ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                RowStyle="{DynamicResource DataGridRowStyle1}"
+                Style="{DynamicResource DataGridStyle1}">
+                <DataGrid.Columns>
+                    <DataGridCheckBoxColumn
+                        Width="auto"
+                        CanUserResize="False"
+                        ElementStyle="{StaticResource GridViewCheckBoxStyle}">
+                        <DataGridCheckBoxColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox Style="{StaticResource GridViewCheckBoxStyle}" />
+                            </DataTemplate>
+                        </DataGridCheckBoxColumn.HeaderTemplate>
+                    </DataGridCheckBoxColumn>
+                    <DataGridTextColumn
+                        Width="100"
+                        Binding="{Binding Id}"
+                        CanUserResize="False"
+                        Header="ID"
+                        IsReadOnly="True" />
+                    <DataGridTemplateColumn
+                        Width="*"
+                        Header="Name"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border
+                                        Width="20"
+                                        Height="20"
+                                        Margin="0,0,6,0"
+                                        Background="Red"
+                                        CornerRadius="50">
+                                        <TextBlock
+                                            Margin="0,0,0,1"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            Foreground="White"
+                                            Text="{Binding Charector}" />
+                                    </Border>
+
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Birthday}"
+                        CanUserResize="False"
+                        Header="Birthday"
+                        IsReadOnly="True" />
+
+                    <DataGridTemplateColumn
+                        Width="100"
+                        Header="Operatios"
+                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Confirm" Style="{StaticResource GridViewButtonStyle}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <!--  group button  -->
+        <StackPanel Grid.Row="1" Grid.Column="1">
+
+            <Border
+                Height="46"
+                Margin="4"
+                Padding="4,0"
+                VerticalAlignment="Center"
+                Background="#f1f1f1"
+                BorderBrush="#dddddd"
+                BorderThickness="1"
+                CornerRadius="5">
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button
+                        Width="130"
+                        Height="30"
+                        Margin="6"
+                        Content="ด่วน"
+                        IsEnabled="False"
+                        Style="{StaticResource ButtonPrimaryStyle}" />
+                    <Button
+                        Width="130"
+                        Height="30"
+                        Margin="6"
+                        Content="เต็ม"
+                        IsEnabled="False"
+                        Style="{StaticResource ButtonLightOutlineStyle}" />
+                    <Button
+                        Width="130"
+                        Height="30"
+                        Margin="6"
+                        Content="ทั่วไป"
+                        IsEnabled="False"
+                        Style="{StaticResource ButtonLightOutlineStyle}" />
+                </StackPanel>
+            </Border>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Border
+                    Grid.Column="0"
+                    Height="188"
+                    Margin="4"
+                    Padding="4,0"
+                    VerticalAlignment="Top"
+                    Background="#f1f1f1"
+                    BorderBrush="#dddddd"
+                    BorderThickness="1"
+                    CornerRadius="5">
+                    <!--<TextBlock Text="Remark" />-->
+                    <TextBlock fa:Awesome.Inline="{Binding MyInlineText}" />
+                </Border>
+
+                <Border
+                    Grid.Column="1"
+                    Height="188"
+                    Margin="4"
+                    Padding="4,0"
+                    VerticalAlignment="Top"
+                    Background="#f1f1f1"
+                    BorderBrush="#dddddd"
+                    BorderThickness="1"
+                    CornerRadius="5">
+                    <TextBlock Text="Image" />
+                </Border>
+
+            </Grid>
+
+        </StackPanel>
+
+        <!--  SO Selection  -->
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="1"
+            Orientation="Vertical">
+
+            <Border
+                Grid.Row="1"
+                Height="290"
+                Margin="4"
+                Padding="6,0"
+                Background="#f1f1f1"
+                BorderBrush="#dddddd"
+                BorderThickness="1"
+                CornerRadius="5">
+                <DataGrid
+                    Name="dgSoSelect"
+                    AutoGenerateColumns="False"
+                    CellStyle="{DynamicResource DataGridCellStyle}"
+                    ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}"
+                    RowStyle="{DynamicResource DataGridRowStyle1}"
+                    Style="{DynamicResource DataGridStyle1}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="100"
+                            Binding="{Binding Id}"
+                            CanUserResize="False"
+                            Header="ID"
+                            IsReadOnly="True" />
+                        <DataGridTemplateColumn
+                            Width="*"
+                            Header="Name"
+                            IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Border
+                                            Width="20"
+                                            Height="20"
+                                            Margin="0,0,6,0"
+                                            Background="Red"
+                                            CornerRadius="50">
+                                            <TextBlock
+                                                Margin="0,0,0,1"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                Foreground="White"
+                                                Text="{Binding Charector}" />
+                                        </Border>
+
+                                        <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding Birthday}"
+                            CanUserResize="False"
+                            Header="Birthday"
+                            IsReadOnly="True" />
+
+                        <DataGridTemplateColumn
+                            Width="100"
+                            Header="Operatios"
+                            IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Confirm" Style="{StaticResource GridViewButtonStyle}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
+
+                </Grid.ColumnDefinitions>
+                <!--<Grid.RowDefinitions>
+                    <RowDefinition Height="30" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>-->
+
+                <Border
+                    Grid.Column="0"
+                    Margin="4"
+                    Padding="6,0"
+                    Background="#f1f1f1"
+                    BorderBrush="#dddddd"
+                    BorderThickness="1"
+                    CornerRadius="5">
+                    <StackPanel>
+                        <TextBlock
+                            Padding="4"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Foreground="Gray"
+                            Text="Pack Size" />
+                        <TextBlock
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Text="0.00"
+                            TextAlignment="Right" />
+                        <TextBlock
+                            Padding="4,4,4,10"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Foreground="Gray"
+                            Text="กก"
+                            TextAlignment="Right" />
+                    </StackPanel>
+                </Border>
+
+
+                <Border
+                    Grid.Column="1"
+                    Margin="4"
+                    Padding="6,0"
+                    Background="#f1f1f1"
+                    BorderBrush="#dddddd"
+                    BorderThickness="1"
+                    CornerRadius="5">
+                    <StackPanel>
+                        <TextBlock
+                            Padding="4"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Foreground="Gray"
+                            Text="Remaining" />
+                        <TextBlock
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Text="0.00"
+                            TextAlignment="Right" />
+                        <TextBlock
+                            Padding="4,4,4,10"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Foreground="Gray"
+                            Text="กก"
+                            TextAlignment="Right" />
+                    </StackPanel>
+                </Border>
+
+                <Border
+                    Grid.Column="2"
+                    Margin="4"
+                    Padding="6,0"
+                    Background="#f1f1f1"
+                    BorderBrush="#dddddd"
+                    BorderThickness="1"
+                    CornerRadius="5">
+                    <StackPanel>
+                        <TextBlock
+                            Padding="4"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Foreground="Gray"
+                            Text="Pack Quantiry" />
+                        <TextBlock
+                            FontSize="28"
+                            FontWeight="Bold"
+                            Foreground="Green"
+                            Text="0.00"
+                            TextAlignment="Right" />
+                        <!--<TextBlock
+                            Padding="4,4,4,10"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Foreground="Gray"
+                            Text="กก"
+                            TextAlignment="Right" />-->
+                    </StackPanel>
+                </Border>
+
+                <Button
+                    x:Name="btnWeight"
+                    Grid.Column="3"
+                    Height="80"
+                    Margin="4,0"
+                    Click="btnWeight_Click"
+                    Style="{StaticResource ButtonPrimaryStyle}">
+                    <Button.Content>
+                        <StackPanel>
+                            <fa:IconBlock
+                                x:Name="iconBlock"
+                                Foreground="White"
+                                Icon="ScaleBalanced" />
+                            <TextBlock
+                                x:Name="textBlock"
+                                Margin="0,6"
+                                Text="ช่างน้ำหนัก" />
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </Grid>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

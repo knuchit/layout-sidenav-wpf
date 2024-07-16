@@ -1,0 +1,556 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  button  -->
+    <Style x:Key="ButtonPrimaryStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#007bff" />
+        <!--  สีพื้นหลัง  -->
+        <Setter Property="Foreground" Value="White" />
+        <!--  สีตัวอักษร  -->
+        <Setter Property="BorderBrush" Value="#007bff" />
+        <!--  สีขอบ  -->
+        <Setter Property="Padding" Value="6,2" />
+        <!--  Padding  -->
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <!--  ขนาดฟอนต์  -->
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#0056b3" />
+                <!--  สีพื้นหลังเมื่อเมาส์ชี้  -->
+                <Setter Property="BorderBrush" Value="#0056b3" />
+                <!--  สีขอบเมื่อเมาส์ชี้  -->
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#004085" />
+                <!--  สีพื้นหลังเมื่อกด  -->
+                <Setter Property="BorderBrush" Value="#004085" />
+                <!--  สีขอบเมื่อกด  -->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonPrimaryOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#007bff" />
+        <Setter Property="BorderBrush" Value="#007bff" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#0056b3" />
+                <Setter Property="BorderBrush" Value="#0056b3" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#004085" />
+                <Setter Property="BorderBrush" Value="#004085" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="ButtonSecondaryStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#6c757d" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="#565e64" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#5c636a" />
+                <Setter Property="BorderBrush" Value="#5c636a" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#565e64" />
+                <Setter Property="BorderBrush" Value="#51585e" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonSecondaryOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#6c757d" />
+        <Setter Property="BorderBrush" Value="#565e64" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#5c636a" />
+                <Setter Property="BorderBrush" Value="#5c636a" />
+                <Setter Property="Foreground" Value="#ffffff" />
+
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#565e64" />
+                <Setter Property="BorderBrush" Value="#51585e" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonSuccessStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#198754" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="#198754" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#157347" />
+                <Setter Property="BorderBrush" Value="#13653f" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#146c43" />
+                <Setter Property="BorderBrush" Value="#13653f" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonSuccessOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#198754" />
+        <Setter Property="BorderBrush" Value="#198754" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#157347" />
+                <Setter Property="BorderBrush" Value="#13653f" />
+                <Setter Property="Foreground" Value="#ffffff" />
+
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#146c43" />
+                <Setter Property="BorderBrush" Value="#13653f" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonDangerStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#dc3545" />
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="BorderBrush" Value="#dc3545" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#bb2d3b" />
+                <Setter Property="BorderBrush" Value="#b02a37" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#b02a37" />
+                <Setter Property="BorderBrush" Value="#a52834" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonDangerOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#dc3545" />
+        <Setter Property="BorderBrush" Value="#dc3545" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#bb2d3b" />
+                <Setter Property="BorderBrush" Value="#b02a37" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#b02a37" />
+                <Setter Property="BorderBrush" Value="#a52834" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonWarningStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffc107" />
+        <Setter Property="Foreground" Value="#000" />
+        <Setter Property="BorderBrush" Value="#ffc107" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#ffca2c" />
+                <Setter Property="BorderBrush" Value="#ffc720" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#ffcd39" />
+                <Setter Property="BorderBrush" Value="#ffc720" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonWarningOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#ffc107" />
+        <Setter Property="BorderBrush" Value="#ffc107" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#ffca2c" />
+                <Setter Property="BorderBrush" Value="#ffc720" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#ffcd39" />
+                <Setter Property="Foreground" Value="#ffffff" />
+                <Setter Property="BorderBrush" Value="#ffc720" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonInfoStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#0dcaf0" />
+        <Setter Property="Foreground" Value="#000000" />
+        <Setter Property="BorderBrush" Value="#0dcaf0" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#31d2f2" />
+                <Setter Property="BorderBrush" Value="#25cff2" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#3dd5f3" />
+                <Setter Property="BorderBrush" Value="#25cff2" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonInfoOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#0dcaf0" />
+        <Setter Property="BorderBrush" Value="#0dcaf0" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#31d2f2" />
+                <Setter Property="BorderBrush" Value="#25cff2" />
+                <Setter Property="Foreground" Value="#ffffff" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#3dd5f3" />
+                <Setter Property="Foreground" Value="#ffffff" />
+                <Setter Property="BorderBrush" Value="#25cff2" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonLightStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#f8f9fa" />
+        <Setter Property="Foreground" Value="#000000" />
+        <Setter Property="BorderBrush" Value="#d3d4d5" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#d3d4d5" />
+                <Setter Property="BorderBrush" Value="#c6c7c8" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#c6c7c8" />
+                <Setter Property="BorderBrush" Value="#babbbc" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonLightOutlineStyle" TargetType="Button">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="1"
+                        CornerRadius="5">
+                        <ContentPresenter
+                            Margin="10,4"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="Foreground" Value="#000000" />
+        <Setter Property="BorderBrush" Value="#c6c7c8" />
+        <Setter Property="Padding" Value="6,2" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#d3d4d5" />
+                <Setter Property="BorderBrush" Value="#c6c7c8" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="#c6c7c8" />
+                <Setter Property="BorderBrush" Value="#babbbc" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
